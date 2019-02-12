@@ -1,0 +1,71 @@
+1.
+network security:
+https://github.com/ISLOUC
+
+2.
+Angular JS：
+http://www.runoob.com/angularjs/angularjs-tutorial.html
+
+3.
+Unicode and Character Sets
+https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
+字符集和字符编码：
+http://cenalulu.github.io/linux/character-encoding/
+
+4.
+XSS
+SSRF SSRF-服务端请求伪造漏洞，危害为服务器代替攻击者发送一个外界不可达的请求
+
+
+5.
+Tensorflow:
+http://tensorfly.cn/
+http://tensorfly.cn/tfdoc/tutorials/mnist_beginners.html
+
+安装：
+http://tensorfly.cn/tfdoc/get_started/os_setup.html
+
+
+Session类：
+http://tensorfly.cn/tfdoc/api_docs/python/client.html#session-management
+
+Graph类：
+http://tensorfly.cn/tfdoc/api_docs/python/framework.html#Graph
+
+使用GPU：
+http://tensorfly.cn/tfdoc/how_tos/using_gpu.html
+
+Rank Shape Type：
+http://tensorfly.cn/tfdoc/resources/dims_types.html
+
+Variables:
+http://tensorfly.cn/tfdoc/how_tos/variables.html
+
+TensorFlow 内置的优化算法：
+http://tensorfly.cn/tfdoc/api_docs/python/train.html#optimizers
+
+
+6.
+Numpy:
+http://www.numpy.org/devdocs/reference/
+
+
+docs:
+9行Python代码搭建神经网络
+https://jizhi.im/blog/post/nn_py_9
+
+如何通俗易懂地解释卷积？
+（求两个函数叠加的效果，比如丢两个骰子，求两个骰子和为4的概率）
+https://www.zhihu.com/question/22298352?rf=21686447
+
+池化：
+（为了减小过拟合，最大池化，平均池化等等。。）
+https://blog.csdn.net/fontthrone/article/details/76652762
+
+傅立叶变换：
+（将一个复杂函数转换成多个简单函数的叠加值的过程）
+https://www.zhihu.com/question/19714540
+
+
+
+7.
