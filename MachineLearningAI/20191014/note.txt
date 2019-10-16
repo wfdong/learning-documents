@@ -34,7 +34,7 @@ from sklearn.compose import ColumnTransformer
 labelencoder_X = LabelEncoder()
 X[:, 0] = labelencoder_X.fit_transform(X[:, 0])
 
-#dummy categorical
+#dummy categorical (categorical variables --> dummy variables)(don't need to include all the dummy variables: always omit one dummy variable)
 ct = ColumnTransformer([('encoder', OneHotEncoder(categories='auto'), [0])], remainder='passthrough')
 X = np.array(ct.fit_transform(X), dtype=np.float)
 
@@ -60,7 +60,45 @@ X_test = sc_X.transform(X_test)
 2. Regression
    (Regression analysis is a powerful statistical method that allows you to examine the relationship between two or more variables of interest. While there are many types of regression analysis, at their core they all examine the influence of one or more independent variables on a dependent variable) (Regression models (both linear and non-linear) are used for predicting a real value)
 (1) Simple Linear Regression
+    y = a*x + b (y:dependent variable; x:independent variable; a:Coefficient; b:Constant)
 (2) Multiple Linear Regression
+    y = a*x1 + b*x2 + c*x3 + ... + k
+	
+	<1>Assumptions of a Linear Regression:
+	   Linearity
+	   Homoscedasticity
+	   Multivariate normality
+	   Independence of errors
+	   Lack of multicollinearity
+	<2>P-Value
+	   The p-value is actually the probability of getting a sample like ours, or more extreme than ours IF the null hypothesis is true
+	   p值代表：在假设原假设（H0）正确时，出现现状或更差的情况的概率
+	   
+	   1) All-in
+	      Prior knowledge; OR 
+		  You have to; OR
+		  Preparing for Backward Elimination
+	   2) Backward Elimination (*most practical*)
+	      Step1:Select a significance level to stay in the model (eg: SL=0.05)
+		  Step2:Fit the full model with all possible predictors
+		  Step3:Consider the predictor with the highest P-Value. If P>SL, go to STEP4 ,otherwise go to FIN(model is ready)
+		  Step4:Remove the predictor
+		  Step5:Fit model without this variable(then go to step3)
+	   3) Forward Selection
+	      Step1:Select a significance level to enter the model (eg: SL=0.05)
+		  Step2:Fit all simple regression models y ~ xn Select the one with the lowest P-Value
+		  Step3:Keep this variable and fit all possible models with one extra predictor added to the one(s) you already have
+		  Step4:Consider the predictor with lowest P-Value. If P<SL, go to Step3,otherwise go to the FIN
+	   4) Bidirectional Elimination
+	      Step1:Select a significance level to enter and to stay in the model eg:SLENTER = 0.05, SLSTAY=0.05
+		  Step2:Perform the next step of Forward Selection (new variables must have: P < SLENTER to enter)
+		  Step3:Perform all steps of Backward Elimination(old variables must have P < SLSTAY to stay)
+		  Step4:No new variables can enter and no old variables can exit
+	   5) All possible Models
+	      Step1:Select a criterion of goodness of fit(eg: Akaike criterion)
+		  Step2:Construct All possible Regression Models: 2^n-1 total combinations
+		  Step3:Select the one with the best criterion
+	   5) Score Comparison
 (3) Polynomial Regression
 (4) Support Vector for Regression (SVR)
 (5) Decision Tree Classification
